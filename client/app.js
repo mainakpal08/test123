@@ -1,4 +1,4 @@
-/*
+
 'use strict';
 
 function create() {
@@ -48,7 +48,7 @@ function  login() {
             })
             .then(function (d) {
                 $("#response").html(d.message);
-                window.location.href = 'http://localhost:3000/admin.html'
+                window.location.href = 'http://localhost:3302/admin.html'
             })
 
 
@@ -109,4 +109,4 @@ function question() {
            //console.log(data.data);
         });
 
-}*/
+}
