@@ -9,7 +9,9 @@ var url = "https://lostandfoundhope.herokuapp.com/api/v1/question/add";
 xhr.open("POST", url, true);
 xhr.setRequestHeader("Content-Type", "application/json");
 xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
+    alert("Recv");
+    if (xhr.readyState === 4 && xhr.status === 201) {
+        alert("Recv2");
         var json = JSON.parse(xhr.responseText);
         alert(json.message);
     }
