@@ -18,7 +18,7 @@ function create() {
                 country: this.elements.country.value,
                 userId: this.elements.userId.value,
                 password: this.elements.password.value,
-                //confirmPass: this.elements.confPassword.value
+                confirmPass: this.elements.confPassword.value
             })
         })
             .then(function (res) {
@@ -82,31 +82,31 @@ function question() {
         }) .then(function (data) {
             console.log(data.data);
             data.data.forEach(function (q) {
-               /!* var res = q;
+                var res = q;
                 for (var key in res) {
                     if (res.hasOwnProperty(key)) {
                         var options = res['options'];
                         console.log(options);
 
 
-                        //console.log(key + " -> " + res[key]);
+                        console.log(key + " -> " + res[key]);
                         $("#questions").append(`${key + " -> " + res[key]} <br>`);
                         for(var i in options){
                             console.log(i);
-                            ///console.log(i + " -> " + options[i]);
+                            console.log(i + " -> " + options[i]);
                             $("#questions").append(`${i + " -> " + options[i]} <br>`);
                         }
                     }
                 }
-*!/
+
                $("#q").append(` Q: ${q.q} <br> Category : ${q.category} <br> Option: ${q.options.option1} &nbsp ${q.options.option2} &nbsp ${q.options.option3} &nbsp ${q.options.option4} <br> Ans: ${q.ans} <br> Level: ${q.level} <br><br><br><br>`);
-                //$("#cat").append(`Category : ${q.category} <br>`);
+                $("#cat").append(`Category : ${q.category} <br>`);
             });
 
-                //console.log(test);
+                console.log(test);
             });
 
-           //console.log(data.data);
+           console.log(data.data);
         });
 
 }
