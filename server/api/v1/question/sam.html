@@ -1,0 +1,28 @@
+
+<html>
+<head>
+<script>
+function exec()
+{
+var xhr = new XMLHttpRequest();
+var url = "add";
+xhr.open("POST", url, true);
+xhr.setRequestHeader("Content-Type", "application/json");
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        var json = JSON.parse(xhr.responseText);
+        alert(json.message);
+    }
+};
+var data = JSON.stringify({"type": "hey@mail.com", "password": "101010"});
+xhr.send(data);
+alert("POSTED");
+}
+
+</script>
+</head>
+<body>
+<button type="button" onclick="exec()"> Send </button>
+</body>
+
+</html>
