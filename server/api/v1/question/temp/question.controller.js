@@ -9,9 +9,7 @@ module.exports.add = function(req, res, next) {
         if (err) {
             err.status = "406";
             console.log(err);
-            return res.status(201).json({
-                message: "Your Question successfully."
-            });
+            return next(err);
         } else {
             return res.status(201).json({
                 message: "Your Question has been added successfully.",
