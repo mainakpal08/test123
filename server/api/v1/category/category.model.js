@@ -26,7 +26,7 @@ var categorySchema = new mongoose.Schema (
     }
 );
 
-categorySchema.path('name').validate({
+/*categorySchema.path('name').validate({
     isAsync:true,
     validator: function (categoryName,respond) {
         this.constructor.findOne({name: categoryName, respond})
@@ -36,5 +36,5 @@ categorySchema.path('name').validate({
     message : 'This category already exists'
 
 
-});
+});*/
 module.exports = mongoose.model('Category',categorySchema);
