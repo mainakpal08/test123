@@ -60,7 +60,7 @@ function question() {
         e.preventDefault();
 
         fetch('/api/v1/question/add', {
-            method: 'POST',
+            method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 category: this.elements.category.value, 
@@ -69,9 +69,11 @@ function question() {
                     option1 : this.elements.option1.value, 
                     option2 : this.elements.option2.value, 
                     option3 : this.elements.option3.value, 
-                    option4 : this.elements.option4.value}, 
-                    ans: this.elements.answer.value, 
-                    level:this.elements.level.value })
+                    option4 : this.elements.option4.value
+                }, 
+                ans: this.elements.answer.value, 
+                level:this.elements.level.value 
+            })
         })
             .then(function (res) {
                 return res.json();
