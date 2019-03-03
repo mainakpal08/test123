@@ -62,16 +62,7 @@ function question() {
         fetch('/api/v1/question/add', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                category: this.elements.category.value, 
-                q: this.elements.question.value,
-                options:{
-                    option1 : this.elements.option1.value, 
-                    option2 : this.elements.option2.value, 
-                    option3 : this.elements.option3.value, 
-                    option4 : this.elements.option4.value}, 
-                    ans: this.elements.answer.value, 
-                    level:this.elements.level.value })
+            body: JSON.stringify({category: this.elements.category.value, questionText: this.elements.question.value,options:[this.elements.option1.value,this.elements.option2.value,this.elements.option3.value,this.elements.option4.value], answer: this.elements.answer.value, difficultyLevel:this.elements.level.value })
         })
             .then(function (res) {
                 return res.json();
